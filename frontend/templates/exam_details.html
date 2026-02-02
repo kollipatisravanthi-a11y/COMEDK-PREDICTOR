@@ -1,0 +1,253 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary display-4">COMEDK Exam Details</h1>
+        <p class="lead text-muted">A complete guide to the Consortium of Medical, Engineering and Dental Colleges of Karnataka exam.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- What is COMEDK -->
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-primary fw-bold mb-3"><i class="fas fa-info-circle me-2"></i>What is COMEDK?</h3>
+                    <p class="card-text"><strong>COMEDK</strong> stands for <strong>Consortium of Medical, Engineering and Dental Colleges of Karnataka</strong>.</p>
+                    <p>It is an autonomous body formed by private professional colleges in Karnataka to conduct a common entrance test for admissions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purpose -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3"><i class="fas fa-bullseye me-2 text-success"></i>Purpose of Exam</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Provide fair and transparent admissions</li>
+                        <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Avoid multiple entrance tests</li>
+                        <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Admit students into private engineering colleges of Karnataka</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Types of Exams -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3"><i class="fas fa-file-alt me-2 text-warning"></i>Types of Exams</h4>
+                    <div class="mb-3">
+                        <h6 class="fw-bold">1. COMEDK UGET</h6>
+                        <p class="small text-muted mb-1">For Undergraduate Engineering (B.E / B.Tech)</p>
+                        <p class="small text-muted">Main exam students write after 12th</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold">2. COMEDK PGET</h6>
+                        <p class="small text-muted mb-1">For Postgraduate Engineering (M.E / M.Tech)</p>
+                    </div>
+                    <div class="alert alert-light mt-3 mb-0 py-2 small">
+                        <i class="fas fa-info-circle me-1"></i> Most students refer to COMEDK UGET when they say "COMEDK exam".
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eligibility -->
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-4"><i class="fas fa-user-graduate me-2 text-info"></i>Eligibility Criteria (UGET)</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold text-dark">Educational Qualification</h6>
+                            <ul class="small text-muted">
+                                <li>Must have passed 10+2 / PU / equivalent</li>
+                                <li><strong>Subjects:</strong> Physics, Mathematics (mandatory), Chemistry / Biotechnology / Biology / CS / Electronics</li>
+                                <li><strong>Minimum marks:</strong>
+                                    <ul>
+                                        <li>45% (General)</li>
+                                        <li>40% (SC/ST/OBC – Karnataka)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold text-dark">Nationality</h6>
+                            <ul class="small text-muted">
+                                <li>Indian citizens</li>
+                                <li>OCI / PIO candidates also eligible</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Pattern -->
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3"><i class="fas fa-table me-2 text-primary"></i>Exam Pattern</h4>
+                    <table class="table table-bordered text-center">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Subject</th>
+                                <th>No. of Questions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Physics</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>60</td>
+                            </tr>
+                            <tr class="fw-bold table-primary">
+                                <td>Total</td>
+                                <td>180</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-3">
+                        <span class="badge bg-success me-2">+1 mark for correct</span>
+                        <span class="badge bg-danger">No negative marking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Highlights -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 bg-primary text-white">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-4"><i class="fas fa-star me-2"></i>Highlights</h4>
+                    <div class="mb-3">
+                        <h6 class="fw-bold mb-1">Mode</h6>
+                        <p class="small opacity-75">Computer Based Test (CBT)</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="fw-bold mb-1">Duration</h6>
+                        <p class="small opacity-75">3 hours (180 minutes)</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="fw-bold mb-1">Medium</h6>
+                        <p class="small opacity-75">English only</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Max Marks</h6>
+                        <p class="small opacity-75">180</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Syllabus & Rank -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3"><i class="fas fa-book me-2 text-secondary"></i>Syllabus</h4>
+                    <p class="text-muted small">Based on PUC / CBSE / ISC Class 11 & 12 syllabus.</p>
+                    <ul class="small text-muted">
+                        <li><strong>Physics:</strong> Laws of motion, optics, electricity</li>
+                        <li><strong>Chemistry:</strong> Organic, inorganic, physical</li>
+                        <li><strong>Mathematics:</strong> Algebra, calculus, trigonometry</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3"><i class="fas fa-trophy me-2 text-warning"></i>Rank Generation</h4>
+                    <p class="text-muted small">Rank is calculated based on Total marks.</p>
+                    <h6 class="fw-bold small">Tie-breaking rules:</h6>
+                    <ol class="small text-muted mb-0">
+                        <li>Higher Mathematics marks</li>
+                        <li>Higher Physics marks</li>
+                        <li>Age (older candidate preferred)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process -->
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-4"><i class="fas fa-road me-2 text-dark"></i>Counselling Process</h4>
+                    <div class="d-flex justify-content-between flex-wrap text-center">
+                        <div class="px-2 mb-3">
+                            <div class="rounded-circle bg-light p-3 mb-2 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-user-plus text-primary"></i>
+                            </div>
+                            <small class="fw-bold">Registration</small>
+                        </div>
+                        <div class="px-2 mb-3">
+                            <div class="rounded-circle bg-light p-3 mb-2 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-list-ol text-primary"></i>
+                            </div>
+                            <small class="fw-bold">Choice Filling</small>
+                        </div>
+                        <div class="px-2 mb-3">
+                            <div class="rounded-circle bg-light p-3 mb-2 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chair text-primary"></i>
+                            </div>
+                            <small class="fw-bold">Seat Allotment</small>
+                        </div>
+                        <div class="px-2 mb-3">
+                            <div class="rounded-circle bg-light p-3 mb-2 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-file-contract text-primary"></i>
+                            </div>
+                            <small class="fw-bold">Verification</small>
+                        </div>
+                        <div class="px-2 mb-3">
+                            <div class="rounded-circle bg-light p-3 mb-2 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check-circle text-primary"></i>
+                            </div>
+                            <small class="fw-bold">Admission</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pros & Cons -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3 text-success"><i class="fas fa-thumbs-up me-2"></i>Advantages</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>No negative marking</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Fair counselling</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Good private colleges</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>National-level competition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="card-title fw-bold mb-3 text-danger"><i class="fas fa-thumbs-down me-2"></i>Limitations</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>Fees higher than government colleges</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>Only private institutions</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>No medical admissions now (NEET only)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg bg-white">
+                <div class="card-header bg-white text-center py-4">
+                    <h2 class="mb-0 text-primary fw-bold"><i class="fas fa-calculator me-2"></i>College Predictor</h2>
+                    <p class="text-muted mb-0 mt-2">Enter your details to get started</p>
+                </div>
+                <div class="card-body p-5">
+                    <form action="/predictor" method="POST">
+                        <div class="mb-4">
+                            <label for="rank" class="form-label fw-bold">Your COMEDK Rank</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="fas fa-trophy text-primary"></i></span>
+                                <input type="number" class="form-control form-control-lg" id="rank" name="rank" placeholder="e.g. 5000" min="1" required>
+                            </div>
+                            <div class="invalid-feedback" id="rankError">Please enter a valid positive rank.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="course_type" class="form-label fw-bold">Course</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="fas fa-graduation-cap text-primary"></i></span>
+                                <select class="form-select form-select-lg" id="course_type" name="course_type">
+                                    <option value="engineering">B.E/B.TECH</option>
+                                    <option value="architecture">B.Arch</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="category" class="form-label fw-bold">Category</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="fas fa-users text-primary"></i></span>
+                                <select class="form-select form-select-lg" id="category" name="category">
+                                    <option value="GM">General Merit (GM)</option>
+                                    <option value="KKR">KKR (Hyderabad-Karnataka)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg" id="predictBtn">
+                                <i class="fas fa-magic me-2"></i>Predict My Colleges
+                            </button>
+                        </div>
+                    {% block scripts %}
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const rankInput = document.getElementById('rank');
+                            const form = rankInput.closest('form');
+                            const rankError = document.getElementById('rankError');
+                            const predictBtn = document.getElementById('predictBtn');
+                            form.addEventListener('submit', function(e) {
+                                if (rankInput.value === '' || isNaN(rankInput.value) || Number(rankInput.value) <= 0) {
+                                    rankInput.classList.add('is-invalid');
+                                    rankError.style.display = 'block';
+                                    e.preventDefault();
+                                } else {
+                                    rankInput.classList.remove('is-invalid');
+                                    rankError.style.display = 'none';
+                                }
+                            });
+                            rankInput.addEventListener('input', function() {
+                                if (rankInput.value !== '' && Number(rankInput.value) > 0) {
+                                    rankInput.classList.remove('is-invalid');
+                                    rankError.style.display = 'none';
+                                }
+                            });
+                        });
+                    </script>
+                    {% endblock %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

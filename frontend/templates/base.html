@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMEDK College Predictor</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/"><i class="fas fa-graduation-cap me-2"></i>COMEDK Predictor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/exam-details"><i class="fas fa-info-circle me-1"></i> Exam Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/colleges"><i class="fas fa-university me-1"></i> Colleges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/courses"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/predictor">Predict Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Moving Bar for Contact Info (Marquee) -->
+    <div class="alert alert-info rounded-0 border-0 py-2 mb-0" style="background: #e3f2fd; position: sticky; top: 56px; z-index: 1050;">
+        <marquee behavior="scroll" direction="left" scrollamount="6" style="font-size: 1rem;">
+            <strong>For any queries, contact: </strong>
+            <span class="fw-bold text-primary text-decoration-underline mx-2">kollipatisravanthi@gmail.com</span>
+            |
+            LinkedIn
+            |
+            For more info: <a href="https://www.comedk.org/" class="fw-bold text-primary text-decoration-underline mx-2" target="_blank">www.comedk.org</a>
+        </marquee>
+    </div>
+
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <div class="chat-header">
+            <div class="d-flex align-items-center" onclick="toggleChat()" style="flex-grow: 1; cursor: pointer;">
+                <i class="fas fa-robot me-2"></i>
+                <span>COMEDK Assistant</span>
+            </div>
+            <div>
+                <i class="fas fa-trash-alt me-3" onclick="clearChat()" title="Clear Chat" style="cursor: pointer;"></i>
+                <i class="fas fa-chevron-up" id="chat-toggle-icon" onclick="toggleChat()" style="cursor: pointer;"></i>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-message bot-message">
+                Hello! I'm here to help you with COMEDK related queries. Ask me anything!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <div class="input-group">
+                <input type="text" id="chat-input" class="form-control" placeholder="Type a message..." onkeypress="handleEnter(event)">
+                <button class="btn btn-primary" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">COMEDK Predictor</h5>
+                    <p>
+                        Helping students find their dream engineering colleges through data-driven predictions and analysis.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="/" class="text-white">Home</a></li>
+                        <li><a href="/predictor" class="text-white">Predictor</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-white"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#!" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 copyright-section">
+            © 2025 COMEDK Predictor
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

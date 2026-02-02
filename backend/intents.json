@@ -1,0 +1,207 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good morning",
+        "Good evening",
+        "Good afternoon"
+      ],
+      "responses": [
+        "Hello! I'm your COMEDK Assistant. How can I help you today?",
+        "Hi there! Ready to help you with your COMEDK queries.",
+        "Hey! Ask me anything about COMEDK colleges, exams, or cutoffs."
+      ]
+    },
+    {
+      "tag": "colleges",
+      "patterns": [
+        "colleges",
+        "college list",
+        "list of colleges",
+        "show me colleges",
+        "top colleges",
+        "best colleges",
+        "all colleges"
+      ],
+      "responses": [
+        "You can explore the list of all participating colleges in the **Colleges** section.",
+        "We have data on many top colleges including RVCE, BMSCE, and MSRIT. Check the **Colleges** tab for more details."
+      ]
+    },
+    {
+      "tag": "farewell",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "I am leaving",
+        "Have a Good day",
+        "cya"
+      ],
+      "responses": [
+        "Goodbye! Good luck with your college search!",
+        "See you later. Feel free to come back if you have more questions.",
+        "Bye! Hope I was helpful."
+      ]
+    },
+    {
+      "tag": "courses_info",
+      "patterns": [
+        "courses",
+        "course",
+        "all courses",
+        "list of courses",
+        "What courses are available?",
+        "List all branches",
+        "engineering branches",
+        "Which courses can I take?",
+        "show me courses",
+        "tell me some courses",
+        "branches list",
+        "engineering courses",
+        "available courses"
+      ],
+      "responses": [
+        "Popular branches include CS, ECE, CI, AI, and others. You can view all available branches in the **Courses** section."
+      ]
+    },
+    {
+      "tag": "syllabus",
+      "patterns": [
+        "syllabus",
+        "exam syllabus",
+        "what is the syllabus?",
+        "subjects to study",
+        "ncert syllabus",
+        "11th syllabus",
+        "12th syllabus"
+      ],
+      "responses": [
+        "The syllabus is based on the existing 10+2 / 11th & 12th STD syllabus of NCERT (CBSE/State Board). You can find more details in the **About Exam** section."
+      ]
+    },
+    {
+      "tag": "results_info",
+      "patterns": [
+        "show me results",
+        "prediction results",
+        "what are the results?"
+      ],
+      "responses": [
+        "The results page focuses on B.E./B.Tech courses. Please use the Predictor tool or browse Colleges to see Engineering seat availability."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "How much does it cost?",
+        "engineering fees",
+        "tuition fee"
+      ],
+      "responses": [
+        "The annual tuition fee for COMEDK colleges generally ranges from ₹2.0 Lakhs to ₹2.6 Lakhs, depending on the college and course.",
+        "Fees vary by college. Top colleges usually charge around ₹2.5 Lakhs per annum excluding hostel and other fees."
+      ]
+    },
+    {
+      "tag": "cutoff",
+      "patterns": [
+        "What is the cutoff?",
+        "cutoff for RVCE",
+        "cutoff for CS",
+        "previous year cutoffs",
+        "rank required for BMSCE",
+        "cutoffs"
+      ],
+      "responses": [
+        "Cutoffs vary by college and branch. To check your eligibility, please go to the **Predictor** section."
+      ]
+    },
+    {
+      "tag": "rank",
+      "patterns": [
+        "How is rank calculated?",
+        "What is a good rank?",
+        "my rank is 5000",
+        "rank vs marks"
+      ],
+      "responses": [
+        "Your rank is determined by your score in the COMEDK UGET exam. Higher score leads to a lower (better) rank.",
+        "A rank below 5000 is generally considered very good for top colleges and branches."
+      ]
+    },
+    {
+      "tag": "counselling",
+      "patterns": [
+        "What is the counselling process?",
+        "How to register for counselling?",
+        "counselling dates",
+        "choice filling"
+      ],
+      "responses": [
+        "Counselling usually happens in 3 rounds. You need to register online, upload documents, fill choices, and lock them.",
+        "Keep an eye on the official COMEDK website for counselling schedules and notifications."
+      ]
+    },
+    {
+      "tag": "documents",
+      "patterns": [
+        "What documents are required?",
+        "documents for verification",
+        "certificates needed",
+        "id proof"
+      ],
+      "responses": [
+        "Common documents required are Admit Card, Rank Card, 10th/12th Marks Cards, ID Proof, Study Certificate, etc.",
+        "Ensure you have original documents and multiple sets of attested photocopies."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "tuition fees",
+        "college fees",
+        "cost of engineering"
+      ],
+      "responses": [
+        "The tuition fee for COMEDK colleges is generally around 2-2.5 Lakhs per annum, but it varies by college.",
+        "Apart from tuition fees, there might be other college fees and hostel fees."
+      ]
+    },
+    {
+      "tag": "predictor",
+      "patterns": [
+        "How to use the predictor?",
+        "predict my college",
+        "college predictor tool",
+        "where is the predictor?"
+      ],
+      "responses": [
+        "To use the predictor, go to the 'Predictor' page, enter your rank, select your preferred branches, and click 'Predict Colleges'.",
+        "The predictor uses past year data to estimate your chances. Give it a try!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "Thank you very much"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime!"
+      ]
+    }
+  ]
+}

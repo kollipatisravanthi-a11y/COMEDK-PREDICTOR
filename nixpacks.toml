@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["gcc", "gfortran", "libgomp", "python311Packages.pip"]
+
+[phases.build]
+cmds = ["python setup_db.py"]
+
+[start]
+cmd = "python run.py"

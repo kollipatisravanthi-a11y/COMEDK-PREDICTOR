@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 mb-4">
+        <div class="card-header bg-primary text-white py-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2 class="mb-0 fw-bold">{{ college.name }}</h2>
+                    <p class="mb-0 mt-1 opacity-75"><i class="fas fa-map-marker-alt me-2"></i>{{ college.location }}</p>
+                </div>
+                <span class="badge bg-light text-primary fs-5">{{ college.code }}</span>
+            </div>
+        </div>
+        <div class="card-body p-4">
+            {% if college.website %}
+            <div class="mb-4">
+                <a href="{{ college.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-info text-white">
+                    <i class="fas fa-external-link-alt me-2"></i>Visit Official Website for More Info (Placements, Hostels, etc.)
+                </a>
+            </div>
+            {% endif %}
+
+            {% if college.about %}
+            <div class="mb-5">
+                <h4 class="text-secondary border-bottom pb-2 mb-3">About the Institute</h4>
+                <p class="lead fs-6 text-muted">{{ college.about }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Verified Information Section REMOVED -->
+            
+        </div>
+        <div class="card-footer bg-light p-3">
+            <a href="/colleges" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i>Back to Colleges List</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-card {
+        transition: transform 0.2s;
+    }
+    .hover-card:hover {
+        transform: translateY(-3px);
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<!-- No scripts needed for data fetching anymore -->
+{% endblock %}

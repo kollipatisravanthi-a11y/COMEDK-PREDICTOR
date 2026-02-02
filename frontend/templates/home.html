@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Full Width Carousel Section -->
+<div id="homeCarousel" class="carousel slide mb-5 shadow-sm" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner rounded">
+        <!-- Slide 1: Welcome/Hero -->
+        <div class="carousel-item active" style="min-height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center;">
+            <div class="d-flex align-items-center justify-content-center h-100 p-5 text-white text-center">
+                <div>
+                    <h1 class="display-3 fw-bold mb-3 text-warning" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">COMEDK UGET 2026</h1>
+                    <p class="h3 mb-4 text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Your Gateway to Karnataka's Top Colleges</p>
+                    <p class="lead mb-4 fw-normal">One Entrance Exam for 150+ Colleges & 20,000+ Seats</p>
+                    <a class="btn btn-warning btn-lg px-5 fw-bold text-dark hover-effect" href="/exam-details">Exam Details</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2: Predictor Promotion -->
+        <div class="carousel-item" style="min-height: 500px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center;">
+            <div class="d-flex align-items-center justify-content-center h-100 p-5 text-white text-center">
+                <div>
+                    <h1 class="display-3 fw-bold mb-3 text-info" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Find Your Dream College</h1>
+                    <p class="h4 mb-4 text-light">Use our advanced ML-based predictor to check your eligibility</p>
+                    <a class="btn btn-info btn-lg px-5 fw-bold text-white hover-effect" href="/predictor">
+                        <i class="fas fa-calculator me-2"></i>Predict Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3: Colleges & Courses -->
+        <div class="carousel-item" style="min-height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center;">
+            <div class="d-flex align-items-center justify-content-center h-100 p-5 text-white text-center">
+                <div>
+                    <h1 class="display-3 fw-bold mb-3 text-success" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Excellence in Education</h1>
+                    <p class="h4 mb-4 text-light">Explore Top Engineering, Medical & Dental Institutes</p>
+                    <div class="d-flex justify-content-center gap-3">
+                         <a class="btn btn-success btn-lg fw-bold hover-effect" href="/colleges">View Colleges</a>
+                         <a class="btn btn-outline-light btn-lg hover-effect" href="/courses">Explore Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container">
+    <!-- Existing Content below carousel -->
+    <div class="hero-section text-center d-none"> <!-- Hide old hero as it is now in carousel -->
+        <h1 class="fw-bold text-primary mb-2">COMEDK</h1>
+
+        <p class="h5 text-dark mb-5">Consortium of Medical, Engineering and Dental Colleges of Karnataka</p>
+        <h1 class="display-4 fw-bold mb-3">Find Your Dream College</h1>
+        <p class="lead text-muted mb-4">Use our advanced prediction algorithm to find the best engineering colleges based on your COMEDK rank.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a class="btn btn-primary btn-lg" href="/predictor" role="button">
+                <i class="fas fa-search me-2"></i>Predict Now
+            </a>
+            <a class="btn btn-outline-secondary btn-lg rounded-pill px-4" href="/colleges" role="button">
+                View Colleges
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5 position-relative">
+        <!-- Optional: Background for features section -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.1; z-index: -1;"></div>
+        
+        <div class="col-md-3">
+            <div class="card h-100 p-4 text-center border-0 shadow-sm" style="background: linear-gradient(to bottom right, #ffffff, #f0f8ff);">
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="feature-icon bg-primary text-white p-3 rounded-circle">
+                        <i class="fas fa-chart-line fa-lg"></i>
+                    </div>
+                </div>
+                <h3 class="h5 fw-bold">Accurate Analysis</h3>
+                <p class="text-muted small">Based on previous years' cutoff trends and data analysis.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 p-4 text-center border-0 shadow-sm" style="background: linear-gradient(to bottom right, #ffffff, #e6ffe6);">
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="feature-icon bg-success text-white p-3 rounded-circle">
+                        <i class="fas fa-university fa-lg"></i>
+                    </div>
+                </div>
+                <h3 class="h5 fw-bold">Top Colleges</h3>
+                <p class="text-muted small">Explore details about top engineering colleges in Karnataka.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="/courses" class="text-decoration-none">
+                <div class="card h-100 p-4 text-center border-0 shadow-sm hover-effect" style="background: linear-gradient(to bottom right, #ffffff, #e6f2ff);">
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="feature-icon bg-info text-white p-3 rounded-circle">
+                            <i class="fas fa-book-open fa-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5 fw-bold text-dark">Courses</h3>
+                    <p class="text-muted small">Explore various engineering courses offered by COMEDK colleges.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/predictor" class="text-decoration-none">
+                <div class="card h-100 p-4 text-center border-0 shadow-sm hover-effect" style="background: linear-gradient(to bottom right, #ffffff, #faf0e6);">
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="feature-icon bg-warning text-dark p-3 rounded-circle">
+                            <i class="fas fa-calculator fa-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5 fw-bold text-dark">Predict Now</h3>
+                    <p class="text-muted small">Get your prediction results instantly with just a few clicks.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="row mt-5 mb-5 justify-content-center">
+        <div class="col-12 text-center mb-4">
+            <h2 class="fw-bold text-primary">Meet the Team</h2>
+            <p class="text-muted">The minds behind COMEDK Predictor</p>
+        </div>
+
+        <!-- Developer -->
+        <div class="col-md-3 mb-4">
+            <div class="card border-0 shadow-sm h-100 hover-effect pt-3">
+                <div class="text-center">
+                    <img src="https://ui-avatars.com/api/?name=Lakshmi+Sravanthi&background=0d6efd&color=fff&size=100&rounded=true" alt="Developer" class="rounded-circle shadow" width="100" height="100">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Kollipati Lakshmi Sravanthi</h5>
+                    <p class="text-muted small mb-3">Project Lead</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="https://github.com/kollipatisravanthi-a11y" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kollipati-lakshmi-sravanthi" target="_blank" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-3 mb-4">
+            <div class="card border-0 shadow-sm h-100 hover-effect pt-3">
+                <div class="text-center">
+                    <img src="https://ui-avatars.com/api/?name=K+Manoj+Kumar&background=ffc107&color=000&size=100&rounded=true" alt="Team Member" class="rounded-circle shadow" width="100" height="100">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">K Manoj Kumar</h5>
+                    <p class="text-muted small mb-3">Backend Developer</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="https://github.com/kurupatimanoj7" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kurupatimanojkumar" target="_blank" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-3 mb-4">
+            <div class="card border-0 shadow-sm h-100 hover-effect pt-3">
+                <div class="text-center">
+                    <img src="https://ui-avatars.com/api/?name=Nanda+Kumar+HR&background=198754&color=fff&size=100&rounded=true" alt="Team Member" class="rounded-circle shadow" width="100" height="100">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Nanda Kumar HR</h5>
+                    <p class="text-muted small mb-3">Frontend Developer</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="https://github.com/nandakumarhr" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nanda-kumar-h-r-9776b1390?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col-md-3 mb-4">
+            <div class="card border-0 shadow-sm h-100 hover-effect pt-3">
+                <div class="text-center">
+                    <img src="https://ui-avatars.com/api/?name=NR+Mahesh+Raju&background=dc3545&color=fff&size=100&rounded=true" alt="Team Member" class="rounded-circle shadow" width="100" height="100">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">NR Mahesh Raju</h5>
+                    <p class="text-muted small mb-3">Database Admin</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="https://github.com/mahesh27706" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/n-r-mahesh-raju" target="_blank" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-effect:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+</style>
+{% endblock %}

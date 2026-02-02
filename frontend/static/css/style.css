@@ -1,0 +1,297 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --gradient-accent: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe5b4 0%, #e3e3e3 100%); /* Peach + Silver */
+    background-attachment: fixed; /* Keeps gradient fixed while scrolling */
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--gradient-primary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: rgba(255,255,255,0.9) !important;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.btn-light {
+    color: #1e3c72 !important;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 100px; /* Space for fixed navbar */
+    min-height: 80vh;
+    padding-bottom: 50px;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 40px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-primary);
+}
+
+.hero-section h1 {
+    color: #1e3c72;
+    font-weight: 800;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--card-shadow);
+    background: #fff;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #1e3c72;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .feature-icon {
+    transform: rotateY(180deg);
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    border-color: #8ec5fc;
+}
+
+.input-group-text {
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.form-control, .form-select {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding-top: 3rem;
+}
+
+footer h5 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff !important;
+}
+
+.copyright-section {
+    background-color: #000;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Tables */
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    color: #495057;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+/* Chatbot Widget Styles */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    max-height: 50px; /* Collapsed state */
+}
+
+.chat-widget.expanded {
+    max-height: 500px;
+}
+
+.chat-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 12px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.chat-body {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background-color: #e9ecef;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.user-message {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-footer {
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+}
+
+.chat-footer .input-group {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.chat-footer input {
+    border-right: none;
+}
+
+.chat-footer button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Dark Mode Support for Chat */
+@media (prefers-color-scheme: dark) {
+    /* Note: Since the app doesn't have a global dark mode toggle yet, 
+       we'll keep the chat light for now to match the base theme, 
+       or we can make it dark if desired. 
+       Let's keep it light/neutral for now as the base theme is mixed. */
+}
+
+
+/* College Details Preview Hover */
+.hover-preview {
+    transition: all 0.2s;
+}
+.hover-preview:hover {
+    background-color: #e2e6ea !important;
+    border-color: #adb5bd !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Courses & Branches</h2>
+        <p class="text-muted">Explore the various courses and branches offered under COMEDK.</p>
+    </div>
+
+
+
+    <ul class="nav nav-pills nav-fill mb-4 justify-content-center gap-2" id="courseTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active bg-dark text-white" id="general-tab" data-bs-toggle="pill" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General Courses</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link bg-secondary text-white" id="engineering-tab" data-bs-toggle="pill" data-bs-target="#engineering" type="button" role="tab" aria-controls="engineering" aria-selected="false">Engineering Branches</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link bg-secondary text-white" id="architecture-tab" data-bs-toggle="pill" data-bs-target="#architecture" type="button" role="tab" aria-controls="architecture" aria-selected="false">Architecture Branches</button>
+        </li>
+    </ul>
+
+    <style>
+        .nav-pills .nav-link.active {
+            background-color: #212529 !important; /* Dark */
+            border: 2px solid #0d6efd;
+        }
+        .nav-pills .nav-link:not(.active) {
+            background-color: #6c757d !important; /* Secondary */
+            color: white !important;
+        }
+        @keyframes pop-highlight {
+            0% { transform: scale(1); box-shadow: none; background-color: transparent; }
+            20% { transform: scale(1.02); box-shadow: 0 0 20px rgba(13, 110, 253, 0.6); background-color: rgba(13, 110, 253, 0.2); z-index: 10; position: relative; border-radius: 5px; }
+            80% { transform: scale(1.02); box-shadow: 0 0 20px rgba(13, 110, 253, 0.6); background-color: rgba(13, 110, 253, 0.2); z-index: 10; position: relative; border-radius: 5px; }
+            100% { transform: scale(1); box-shadow: none; background-color: transparent; }
+        }
+        .highlight-row {
+            animation: pop-highlight 2s ease-in-out;
+        }
+        .highlight-row td {
+            transition: background-color 0.3s;
+        }
+    </style>
+
+    <div class="tab-content" id="courseTabsContent">
+
+        <!-- General Courses -->
+        <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary mb-4">Undergraduate Courses</h5>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center p-3 border rounded bg-dark text-white">
+                                        <i class="fas fa-user-md fa-2x text-success me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">M.B.B.S</h6>
+                                            <small class="text-white-50">Medical</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center p-3 border rounded bg-dark text-white">
+                                        <i class="fas fa-tooth fa-2x text-info me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">B.D.S</h6>
+                                            <small class="text-white-50">Dental</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center p-3 border rounded bg-dark text-white" onclick="document.getElementById('engineering-tab').click()" style="cursor: pointer;">
+                                        <i class="fas fa-cogs fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">B.E</h6>
+                                            <small class="text-white-50">Bachelor of Engineering</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center p-3 border rounded bg-dark text-white" onclick="document.getElementById('architecture-tab').click()" style="cursor: pointer;">
+                                        <i class="fas fa-drafting-compass fa-2x text-warning me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">B.Arch</h6>
+                                            <small class="text-white-50">Bachelor of Architecture</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering Branches -->
+        <div class="tab-pane fade" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0 table-striped table-dark">
+                            <thead class="text-white">
+                                <tr>
+                                    <th class="py-3 px-4" style="width: 10%;">Sl No.</th>
+                                    <th class="py-3 px-4">Branch Name</th>
+                                    <th class="py-3 px-4" style="width: 15%;">Branch Code</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for branch in engineering_branches %}
+                                <tr id="code-{{ branch.code|upper }}">
+                                    <td class="py-2 px-4">{{ branch.sl_no }}</td>
+                                    <td class="py-2 px-4 fw-medium">{{ branch.name }}</td>
+                                    <td class="py-2 px-4"><span class="badge bg-secondary">{{ branch.code }}</span></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 text-muted small">
+                <p>(*) Branches have shift courses</p>
+            </div>
+        </div>
+
+        <!-- Architecture Branches -->
+        <div class="tab-pane fade" id="architecture" role="tabpanel" aria-labelledby="architecture-tab">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0 table-striped table-dark">
+                            <thead class="text-white">
+                                <tr>
+                                    <th class="py-3 px-4" style="width: 10%;">Sl No.</th>
+                                    <th class="py-3 px-4">Branch Name</th>
+                                    <th class="py-3 px-4" style="width: 15%;">Branch Code</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for branch in architecture_branches %}
+                                <tr id="code-{{ branch.code|upper }}">
+                                    <td class="py-2 px-4">{{ branch.sl_no }}</td>
+                                    <td class="py-2 px-4 fw-medium">{{ branch.name }}</td>
+                                    <td class="py-2 px-4"><span class="badge bg-secondary">{{ branch.code }}</span></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Search bar and related JS removed as requested -->
+{% endblock %}

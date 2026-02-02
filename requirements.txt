@@ -1,0 +1,14 @@
+Flask
+pandas
+matplotlib
+numpy
+scikit-learn
+gunicorn
+pytest
+openpyxl
+SQLAlchemy
+requests
+beautifulsoup4
+googlesearch-python
+joblib
+xgboost==1.7.6

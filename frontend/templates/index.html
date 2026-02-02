@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COMEDK College Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #003366;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .college {
+            background: #fff;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #003366;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>COMEDK College Predictor</h1>
+
+    <form method="post">
+        <label>Enter Rank</label>
+        <input type="number" name="rank" required>
+
+        <label>Select Category</label>
+        <select name="category" required>
+            <option value="GM">GM</option>
+            <option value="HKR">HKR</option>
+        </select>
+
+        <label>Select Course</label>
+        <select name="course_type" required>
+            <option value="engineering">B.E/B.TECH</option>
+               <option value="architecture">B.ARCH</option>
+        </select>
+
+        <button type="submit">Predict Colleges</button>
+    </form>
+
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if results %}
+    <div class="college">
+        <h3>Predicted Options</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>College Code</th>
+                    <th>College</th>
+                    <th>Branch</th>
+                    <th>Round</th>
+                    <th>Predicted Closing Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                <tr>
+                    <td>{{ row.college_code }}</td>
+                    <td>{{ row.college_name }}</td>
+                    <td>{{ row.branch }}</td>
+                    <td>{{ row.round }}</td>
+                    <td>{{ row.predicted_closing_rank }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

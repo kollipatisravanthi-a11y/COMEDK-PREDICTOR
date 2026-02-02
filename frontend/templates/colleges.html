@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Participating Colleges</h2>
+        <p class="text-muted">List of top engineering colleges accepting COMEDK scores.</p>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="fas fa-search text-muted"></i></span>
+                <input type="text" class="form-control border-start-0 ps-0" id="collegeSearch"
+                    placeholder="Search by College Name or Code...">
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills nav-fill mb-4 justify-content-center gap-2" id="collegeTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active bg-dark text-white" id="engineering-tab" data-bs-toggle="pill"
+                data-bs-target="#engineering" type="button" role="tab" aria-controls="engineering"
+                aria-selected="true">Engineering Colleges</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link bg-secondary text-white" id="architecture-tab" data-bs-toggle="pill"
+                data-bs-target="#architecture" type="button" role="tab" aria-controls="architecture"
+                aria-selected="false">Architecture Colleges</button>
+        </li>
+    </ul>
+
+    <style>
+        .nav-pills .nav-link.active {
+            background-color: #212529 !important;
+            /* Dark */
+            border: 2px solid #0d6efd;
+        }
+
+        .nav-pills .nav-link:not(.active) {
+            background-color: #6c757d !important;
+            /* Secondary */
+            color: white !important;
+        }
+
+        .hover-link:hover {
+            color: #0d6efd !important;
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <div class="tab-content" id="collegeTabsContent">
+        <div class="tab-pane fade show active" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
+            <div class="card shadow-sm border-0 bg-dark text-white">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="py-3 px-4">Code</th>
+                                    <th class="py-3 px-4">College Name</th>
+                                    <th class="py-3 px-4">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for college in engineering_colleges %}
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-info">{{ college.code }}</td>
+                                    <td class="py-3 px-4 fw-medium">
+                                        <a href="{{ college.website }}" target="_blank"
+                                            class="text-decoration-none text-white hover-link">
+                                            {{ college.name }}
+                                        </a>
+                                    </td>
+                                    <td class="py-3 px-4 text-light"><i class="fas fa-map-marker-alt me-2"></i>{{
+                                        college.location }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="architecture" role="tabpanel" aria-labelledby="architecture-tab">
+            <div class="card shadow-sm border-0 bg-dark text-white">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="py-3 px-4">Code</th>
+                                    <th class="py-3 px-4">College Name</th>
+                                    <th class="py-3 px-4">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for college in architecture_colleges %}
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-info">{{ college.code }}</td>
+                                    <td class="py-3 px-4 fw-medium">
+                                        <a href="{{ college.website }}" target="_blank"
+                                            class="text-decoration-none text-white hover-link">
+                                            {{ college.name }}
+                                        </a>
+                                    </td>
+                                    <td class="py-3 px-4 text-light"><i class="fas fa-map-marker-alt me-2"></i>{{
+                                        college.location }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <p class="text-muted small">* This is a partial list of participating institutes.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('collegeSearch');
+
+        searchInput.addEventListener('keyup', function () {
+            const searchTerm = this.value.toLowerCase();
+            const activeTab = document.querySelector('.tab-pane.active');
+
+            // Search in all tabs, but we can just iterate over all rows in all tables
+            const tables = document.querySelectorAll('.table');
+
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach(row => {
+                    const code = row.cells[0].textContent.toLowerCase();
+                    const name = row.cells[1].textContent.toLowerCase();
+                    const location = row.cells[2].textContent.toLowerCase();
+
+                    if (code.includes(searchTerm) || name.includes(searchTerm) || location.includes(searchTerm)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}

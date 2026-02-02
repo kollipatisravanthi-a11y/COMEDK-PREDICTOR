@@ -1,0 +1,67 @@
+[
+  {
+    "college": "Bangalore Institute of Technology-V V Puram, Bengaluru",
+    "code": "E019",
+    "branch": "IS-\nInformation Science & Engineering",
+    "cutoff": 15238,
+    "category": "GM",
+    "location": "BENGALURU",
+    "course_code": "",
+    "round": "Round2",
+    "details": {
+      "error": "Could not find official website"
+    }
+  },
+  {
+    "college": "The National Institute of Engineering North Campus-Koorgalli, Mysuru",
+    "code": "E085",
+    "branch": "CS-Computer Science & Engineering",
+    "cutoff": 15390,
+    "category": "GM",
+    "location": "MYSURU",
+    "course_code": "",
+    "round": "Round2",
+    "details": {
+      "error": "Could not find official website"
+    }
+  },
+  {
+    "college": "C.M.R. Institute of Technology-Brookefield, Bengaluru",
+    "code": "E032",
+    "branch": "AI-Artificial Intelligence & Machine Learning",
+    "cutoff": 15445,
+    "category": "GM",
+    "location": "BENGALURU",
+    "course_code": "",
+    "round": "Round1",
+    "details": {
+      "error": "Could not find official website"
+    }
+  },
+  {
+    "college": "The National Institute of Engineering South Campus-Mananthavady Road, Mysuru",
+    "code": "E142",
+    "branch": "EE-Electrical & Electronics Engineering",
+    "cutoff": 15509,
+    "category": "GM",
+    "location": "MYSURU",
+    "course_code": "",
+    "round": "Round1",
+    "details": {
+      "error": "Could not find official website"
+    }
+  },
+  {
+    "college": "M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",
+    "code": "E077",
+    "branch": "IM-Industrial Engineering & Management",
+    "cutoff": 15512,
+    "category": "GM",
+    "location": "BENGALURU",
+    "course_code": "",
+    "round": "Round1",
+    "details": {
+      "error": "Could not find official website"
+    }
+  }
+]

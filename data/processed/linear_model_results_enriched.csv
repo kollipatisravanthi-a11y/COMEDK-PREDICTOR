@@ -1,0 +1,415 @@
+College Name,College Code,Location,Course,Course Code,Seat Category,Closing_Rank,Predicted_Closing_Rank
+"Akash Institute of Engineering and Technology-Devanahalli, Bengaluru Rural",E005,BENGALURU RURAL,AD-Artificial Intelligence & Data Science,AD,GM,84613,70112
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,5885,69595
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,36348,69078
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,55758,67870
+"GSSS Institute of Engineering and Technology for Women-Metagalli, Mysuru",E055,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,74720,68043
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,3422,66749
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,61900,65628
+"BGS College of Engineering and Technology-Mahalaxmipuram, Bengaluru",E207,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,106934,69768
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,63821,68560
+"Akash Institute of Engineering and Technology-Devanahalli, Bengaluru Rural",E005,BENGALURU RURAL,AD-Artificial Intelligence & Data Science,AD,GM,84459,70112
+"AMC Engineering College-Bannerghatta Rd, Bengaluru",E007,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,110976,70371
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,26892,69078
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,54107,68646
+"DON BOSCO Institute of Technology-Kumbalgodu, Bengaluru",E041,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,71736,68733
+"East Point College of Engineering and Technology-Avalahalli, Bengaluru",E046,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,59837,68388
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,94669,67870
+"Gopalan College of Engineering And Management-Whitefield, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,65974,67784
+"GSSS Institute of Engineering and Technology for Women-Metagalli, Mysuru",E055,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,56718,68043
+"JSS Academy of Technical Education-Kengeri Main Road, Bengaluru",E060,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,68949,67698
+JSS Science and Technology University-Mysuru,Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,16101,67612
+"Jain College of Engineering-T.S Nagar, Belagavi",E062,BELAGAVI,AD-Artificial Intelligence & Data Science,AD,GM,73621,67439
+"KLS Gogte Institute of Technology-Udyambag, Belagavi",E073,BELAGAVI,AD-Artificial Intelligence & Data Science,AD,GM,43970,66922
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,2098,66749
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,AD-Artificial Intelligence & Data Science,AD,GM,98718,66577
+"Maharaja Institute of Technology-Thandavapura, Mysuru",E082,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,71122,66491
+"Nagarjuna College of Engineering And Technology-Devanahalli, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,59079,66318
+"The National Institute of Engineering North Campus-Koorgalli, Mysuru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,25039,64593
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AD-Artificial Intelligence & Data Science,AD,GM,62004,66232
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,975,65973
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,46906,65801
+"Siddaganga Institute of Technology-B H Road, Tumakuru",E125,TUMAKURU,AD-Artificial Intelligence & Data Science,AD,GM,20772,64938
+"Vidyavardhaka College of Engineering-Gokulam, Mysuru",E147,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,80591,64248
+"Cambridge Institute of Technology North Campus-Kundana, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,78588,68905
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,44001,65628
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,38125,68215
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,108990,66059
+"CMR University-Bagalur-Chagalatti, Bengaluru",E187,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,103021,68991
+"R V Institute of Technology and Management-J P Nagar, Bengaluru",E198,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,24673,65887
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,109781,70285
+"Adichunchanagiri Institute Of Technology-Jyothi Nagara, Chikkamagaluru",E004,CHIKAMAGALURU,AD-Artificial Intelligence & Data Science,AD,GM,96642,70199
+"AMC Engineering College-Bannerghatta Rd, Bengaluru",E007,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,102932,70371
+"Atria Institute of Technology-Hebbal, Bengaluru",E012,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,99556,69940
+"B.N.M. Institute of Technology-Banashankari, Bengaluru",E015,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,36964,69854
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,42269,67008
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,16423,69423
+"Bangalore Technological Institute-Chikkanayakanahalli Dinne, Bengaluru",E020,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,53793,69336
+"Bapuji Institute of Engineering and Technology-Shamanur Road, Davangere",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,111716,69250
+"Basaveshwar Engineering College-Vidya Nagar, Bagalkote",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,103197,69164
+"BLDEAs V.P. Dr.P.G.Halakatti College of Engineering and Technology-Ashram Road, Vijayapura",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,91800,69681
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,5312,69595
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,19984,69509
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,26223,69078
+"Cambridge Institute of Technology-K R Puram, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,110484,68819
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,58956,68646
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,7819,68560
+"DON BOSCO Institute of Technology-Kumbalgodu, Bengaluru",E041,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,78693,68733
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,82800,68474
+"East Point College of Engineering and Technology-Avalahalli, Bengaluru",E046,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,86011,68388
+"East West Institute of Technology-BEL Layout, Bengaluru",E048,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,88757,68302
+"Garden City University-Old Madras Road, Bengaluru",E049,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,63842,67957
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,110697,67870
+"GM Institute of Technology-P B Road, Davangere",E051,DAVANGERE,AD-Artificial Intelligence & Data Science,AD,GM,69224,68129
+"Gopalan College of Engineering And Management-Whitefield, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,89034,67784
+"GSSS Institute of Engineering and Technology for Women-Metagalli, Mysuru",E055,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,54607,68043
+"Sri Jayachamarajendra College of Engineering constituent college of JSS Science and Technology
+University-Manasagangothri, Mysuru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,7156,64766
+"Jawaharlal Nehru New College of Engineering JNNCE-Swalanga Road, Shivamogga",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,46827,67353
+"JSS Academy of Technical Education-Kengeri Main Road, Bengaluru",E060,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,61469,67698
+JSS Science and Technology University-Mysuru,Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,15742,67612
+"KLE Technological University  Formerly called as KLE Dr. M.S. Sheshgiri College of Engineering and
+Technology-Udyambag, Belagavi",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,99417,67094
+"K.S. Institute of Technology-Kanakapura Main Road, Bengaluru",E068,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,82138,67180
+"KLS Gogte Institute of Technology-Udyambag, Belagavi",E073,BELAGAVI,AD-Artificial Intelligence & Data Science,AD,GM,65197,66922
+"KLS Vishwanathrao Deshpande Institute of Technology-Dandeli Road, Haliyal",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,110111,66835
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,1667,66749
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,AD-Artificial Intelligence & Data Science,AD,GM,111099,66577
+"Malnad College of Engineering-Rangoli Halla, Hassan",E079,HASSAN,AD-Artificial Intelligence & Data Science,AD,GM,82338,66404
+"The National Institute of Engineering North Campus-Koorgalli, Mysuru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,24347,64593
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AD-Artificial Intelligence & Data Science,AD,GM,82113,66232
+"PES Institute of Technology and Management-Kotegangoor Cost, Shivamogga",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,84099,66146
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,692,65973
+"Raja Rajeswari College of Engineering-Kumbalgodu, Bengaluru",E099,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,86038,65714
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,42678,65801
+"SJB Institute of Technology-Kengeri, Bengaluru",E107,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,108764,65369
+"SSETs S.G. Balekundri Institute of Technology-Shivabasva Nagar, Belagavi",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,86752,65283
+"Sahyadri College of Engineering and Management-Adyar, Mangaluru",E112,MANGALURU,AD-Artificial Intelligence & Data Science,AD,GM,100034,65197
+"Sai Vidya Institute of Technology-Rajan Kunte, Bengaluru",E113,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,106788,65111
+"Sapthagiri NPS University-Hesarghatta Main Road, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,83561,65024
+"SDM College of Engineering and Technology, Tulu Minority-Kalaghatagi, Dharwad",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,68774,65542
+"Siddaganga Institute of Technology-B H Road, Tumakuru",E125,TUMAKURU,AD-Artificial Intelligence & Data Science,AD,GM,19691,64938
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,36563,64852
+"Sri Venkateshwara College of Engineering-KIAL Road, Bengaluru",E137,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,35910,64680
+"Vemana Institute of Technology-Koramangala, Bengaluru",E145,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,95627,64421
+"Vidya Vikas Institute of Engineering and Technology-Alnahally, Mysuru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,108452,64335
+"Vidyavardhaka College of Engineering-Gokulam, Mysuru",E147,MYSURU,AD-Artificial Intelligence & Data Science,AD,GM,106778,64248
+"Jyothy Institute of Technology-Tathguni, Bengaluru",E156,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,61663,67267
+"Cambridge Institute of Technology North Campus-Kundana, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,77553,68905
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,110415,70026
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,32484,68215
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,108926,66059
+"CMR University-Bagalur-Chagalatti, Bengaluru",E187,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,109536,68991
+"Jain College of Engineering and Technology-Unkal, Hubballi",E194,HUBBALLI,AD-Artificial Intelligence & Data Science,AD,GM,91832,67525
+"R V Institute of Technology and Management-J P Nagar, Bengaluru",E198,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,21189,65887
+"BGS College of Engineering and Technology-Mahalaxmipuram, Bengaluru",E207,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,90133,69768
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,99933,68215
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,30233,69423
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,12335,68560
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AD-Artificial Intelligence & Data Science,AD,GM,49355,66232
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AD-Artificial Intelligence & Data Science,AD,GM,73039,64852
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,AD-Artificial Intelligence & Data Science,AD,GM,86220,68215
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,56571,69139
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,37450,67414
+"KLS Gogte Institute of Technology-Udyambag, Belagavi",E073,BELAGAVI,"AE-
+Aeronautical Engineering",AE,GM,101565,65776
+"M.S. Ramaiah University of Applied Sciences-MSR Nagar, Bengaluru",E197,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,61634,65517
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,71315,64482
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,87540,69139
+"Atria Institute of Technology-Hebbal, Bengaluru",E012,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,110946,68794
+"B.N.M. Institute of Technology-Banashankari, Bengaluru",E015,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,63350,68708
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,68078,65862
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,32635,68277
+"Bapuji Institute of Engineering and Technology-Shamanur Road, Davangere",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,101288,68104
+"Basaveshwar Engineering College-Vidya Nagar, Bagalkote",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,90169,68018
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,7904,68449
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,29885,68363
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,63591,67932
+"Cambridge Institute of Technology-K R Puram, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,88739,67673
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,108621,67500
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,17651,67414
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,84729,67328
+"East Point College of Engineering and Technology-Avalahalli, Bengaluru",E046,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,74935,67242
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,74350,66724
+"GSSS Institute of Engineering and Technology for Women-Metagalli, Mysuru",E055,MYSURU,"AE-
+Aeronautical Engineering",AE,GM,102442,66897
+"JSS Academy of Technical Education-Kengeri Main Road, Bengaluru",E060,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,110026,66552
+"KLE Technological University  Formerly called as KLE Dr. M.S. Sheshgiri College of Engineering and
+Technology-Udyambag, Belagavi",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,109669,65948
+"K.S. Institute of Technology-Kanakapura Main Road, Bengaluru",E068,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,62181,66034
+"KLS Gogte Institute of Technology-Udyambag, Belagavi",E073,BELAGAVI,"AE-
+Aeronautical Engineering",AE,GM,79437,65776
+"KLS Vishwanathrao Deshpande Institute of Technology-Dandeli Road, Haliyal",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,108632,65689
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,4567,65603
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,"AE-
+Aeronautical Engineering",AE,GM,82264,65086
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,1399,64827
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,68546,64655
+"SJB Institute of Technology-Kengeri, Bengaluru",E107,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,49351,64223
+"Sapthagiri NPS University-Hesarghatta Main Road, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,97031,63878
+"SDM College of Engineering and Technology, Tulu Minority-Kalaghatagi, Dharwad",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,88474,64396
+"SDM Institute of Technology, Tulu Minority-Ujjire, Dakshina Kannada",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,97963,64310
+"Siddaganga Institute of Technology-B H Road, Tumakuru",E125,TUMAKURU,"AE-
+Aeronautical Engineering",AE,GM,35776,63792
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,74763,63706
+"The National Institute of Engineering South Campus-Mananthavady Road, Mysuru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,30072,63361
+"Vidyavardhaka College of Engineering-Gokulam, Mysuru",E147,MYSURU,"AE-
+Aeronautical Engineering",AE,GM,109543,63102
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,100240,64482
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,85976,68880
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,75265,67069
+"CMR University-Bagalur-Chagalatti, Bengaluru",E187,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,69337,67845
+"Jain College of Engineering and Technology-Unkal, Hubballi",E194,HUBBALLI,"AE-
+Aeronautical Engineering",AE,GM,89005,66379
+"R V Institute of Technology and Management-J P Nagar, Bengaluru",E198,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,25588,64741
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,24466,68277
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,6143,68449
+"Cambridge Institute of Technology-K R Puram, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,93618,67673
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,"AE-
+Aeronautical Engineering",AE,GM,86367,67500
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,10204,67414
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,47216,63706
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,"AE-
+Aeronautical Engineering",AE,GM,93248,64482
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,"AG-
+Agricultural Engineering",AG,GM,82087,67993
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,39302,67303
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,81432,66268
+JSS Science and Technology University-Mysuru,Unknown,Unknown,"AG-
+Agricultural Engineering",AG,GM,109696,65319
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,38302,64457
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,18883,63681
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,107254,62560
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,"AG-
+Agricultural Engineering",AG,GM,104073,67734
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,60930,63767
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,70725,66182
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,"AG-
+Agricultural Engineering",AG,GM,95839,63940
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,71114,66268
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,"AG-
+Agricultural Engineering",AG,GM,51999,64457
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,99107,66847
+"A.C.S. College of Engineering-Kambipura Mysore Road, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,74861,67019
+"Adichunchanagiri Institute Of Technology-Jyothi Nagara, Chikkamagaluru",E004,CHIKAMAGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,62788,66760
+"AMC Engineering College-Bannerghatta Rd, Bengaluru",E007,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,103040,66933
+"Atria Institute of Technology-Hebbal, Bengaluru",E012,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,85194,66502
+"B.N.M. Institute of Technology-Banashankari, Bengaluru",E015,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,43182,66416
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,22868,65984
+"Bapuji Institute of Engineering and Technology-Shamanur Road, Davangere",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,101886,65812
+"Basaveshwar Engineering College-Vidya Nagar, Bagalkote",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,74077,65726
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,6686,66157
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,26313,66071
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,34791,65639
+"Cambridge Institute of Technology-K R Puram, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,111359,65381
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,9622,65122
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,84409,65036
+"East West Institute of Technology-BEL Layout, Bengaluru",E048,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,73053,64863
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,99801,64432
+"Jawaharlal Nehru New College of Engineering JNNCE-Swalanga Road, Shivamogga",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,92366,63915
+"K.S. Institute of Technology-Kanakapura Main Road, Bengaluru",E068,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,102605,63742
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,3244,63311
+"SJB Institute of Technology-Kengeri, Bengaluru",E107,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,103454,61931
+"SDM College of Engineering and Technology, Tulu Minority-Kalaghatagi, Dharwad",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,75645,62104
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,41674,61414
+"Vemana Institute of Technology-Koramangala, Bengaluru",E145,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,75204,60983
+"Jain College of Engineering and Technology-Unkal, Hubballi",E194,HUBBALLI,AI-Artificial Intelligence & Machine Learning,AI,GM,108652,64087
+"BGS College of Engineering and Technology-Mahalaxmipuram, Bengaluru",E207,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,93228,66329
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,47299,63570
+"KLE Technological University  Formerly called as KLE Dr. M.S. Sheshgiri College of Engineering and
+Technology-Udyambag, Belagavi",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,101670,63656
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,AI-Artificial Intelligence & Machine Learning,AI,GM,101827,63138
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,103486,66847
+"Atria Institute of Technology-Hebbal, Bengaluru",E012,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,105457,66502
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,18272,65984
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,5610,66157
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,29052,65639
+"Cambridge Institute of Technology-K R Puram, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,85816,65381
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,68369,65208
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,8322,65122
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,110247,65036
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,AI-Artificial Intelligence & Machine Learning,AI,GM,106871,63138
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AI-Artificial Intelligence & Machine Learning,AI,GM,71221,62794
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,890,62535
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,48497,62362
+"SJB Institute of Technology-Kengeri, Bengaluru",E107,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,111065,61931
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,37806,61414
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,53533,64777
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,102072,62621
+"CMR University-Bagalur-Chagalatti, Bengaluru",E187,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,103547,65553
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,111127,63570
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,99675,65984
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,47626,66157
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,98837,66071
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,68618,65122
+"Jawaharlal Nehru New College of Engineering JNNCE-Swalanga Road, Shivamogga",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,103564,63915
+JSS Science and Technology University-Mysuru,Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,81346,64173
+"KLS Gogte Institute of Technology-Udyambag, Belagavi",E073,BELAGAVI,AI-Artificial Intelligence & Machine Learning,AI,GM,7406,63483
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,45472,63311
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AI-Artificial Intelligence & Machine Learning,AI,GM,110449,62794
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,20917,62535
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,52607,62190
+"M.S. Ramaiah University of Applied Sciences-MSR Nagar, Bengaluru",E197,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,109381,63225
+"B.N.M. Institute of Technology-Banashankari, Bengaluru",E015,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,91589,66416
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,105816,63570
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,54276,65984
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,47837,66071
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,36048,65122
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,8406,63311
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AI-Artificial Intelligence & Machine Learning,AI,GM,66533,62794
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,2424,62535
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,89917,62362
+"SDM College of Engineering and Technology, Tulu Minority-Kalaghatagi, Dharwad",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,104133,62104
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,96996,61414
+"The National Institute of Engineering South Campus-Mananthavady Road, Mysuru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,37414,61069
+"Vidyavardhaka College of Engineering-Gokulam, Mysuru",E147,MYSURU,AI-Artificial Intelligence & Machine Learning,AI,GM,86250,60810
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,46626,63311
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,17533,62535
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,81153,63570
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,99493,65984
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,21793,66157
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,68406,66071
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,91599,65208
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,55934,65122
+JSS Science and Technology University-Mysuru,Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,93758,64173
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,25278,63311
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,7032,62535
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,89591,62362
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,106568,61414
+"The National Institute of Engineering South Campus-Mananthavady Road, Mysuru",Unknown,Unknown,AI-Artificial Intelligence & Machine Learning,AI,GM,65094,61069
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AI-Artificial Intelligence & Machine Learning,AI,GM,102189,61414
+"CMR University-Bagalur-Chagalatti, Bengaluru",E187,BENGALURU,AL-Agriculture Engineering Course,AL,GM,79385,64407
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AL-Agriculture Engineering Course,AL,GM,68852,64838
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AL-Agriculture Engineering Course,AL,GM,9756,62165
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,AL-Agriculture Engineering Course,AL,GM,75155,65442
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AL-Agriculture Engineering Course,AL,GM,42283,64838
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,106607,61277
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,6650,63865
+"BMS Institute of Technology and Management-Yelahanka, Bengaluru",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,22972,63778
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,76077,62744
+JSS Science and Technology University-Mysuru,Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,26967,61881
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,"AR-
+Automation & Robotics Engineering",AR,GM,109740,60846
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,"AR-
+Automation & Robotics Engineering",AR,GM,52714,60501
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,11261,62830
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,48973,64296
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,107590,60329
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,73943,62916
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,9105,62830
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,2852,61019
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,1091,60243
+"RNS Institute of Technology-R R Nagar Post, Bengaluru",E104,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,50778,60070
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,106533,64296
+"GITAM Deemed to be University-Dodaballapur taluk, Bengaluru",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,56380,62485
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,"AR-
+Automation & Robotics Engineering",AR,GM,82366,60329
+"KLE Technological University Formerly known as BVBCET-Vidyanagar, Hubballi",Unknown,Unknown,"AR-
+Automation & Robotics Engineering",AR,GM,73602,61277
+"A.C.S. College of Engineering-Kambipura Mysore Road, Bengaluru",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,90119,63581
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AS-Aerospace Engineering,AS,GM,14008,59873
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AS-Aerospace Engineering,AS,GM,6429,59097
+"Alliance College of Engineering and Design. Alliance University-Anekal, Bengaluru",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,75474,63150
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,AS-Aerospace Engineering,AS,GM,68743,59183
+"BMS College of Engineering-Basavanagudi, Bengaluru",E027,BENGALURU,AS-Aerospace Engineering,AS,GM,44795,62719
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AS-Aerospace Engineering,AS,GM,53019,61684
+"KLE Technological University  Formerly called as KLE Dr. M.S. Sheshgiri College of Engineering and
+Technology-Udyambag, Belagavi",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,67577,60218
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AS-Aerospace Engineering,AS,GM,42698,59873
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AS-Aerospace Engineering,AS,GM,13038,59097
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AS-Aerospace Engineering,AS,GM,51158,62546
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AS-Aerospace Engineering,AS,GM,30129,61684
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AS-Aerospace Engineering,AS,GM,6767,59873
+"R V College of Engineering-Mysore Road, Bengaluru",E095,BENGALURU,AS-Aerospace Engineering,AS,GM,1790,59097
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AS-Aerospace Engineering,AS,GM,78423,57975
+"Acharya Institute of Technology-Soladevanahalli, Bengaluru",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,106733,63408
+"Atria Institute of Technology-Hebbal, Bengaluru",E012,BENGALURU,AS-Aerospace Engineering,AS,GM,53093,63063
+"B.N.M. Institute of Technology-Banashankari, Bengaluru",E015,BENGALURU,AS-Aerospace Engineering,AS,GM,45911,62977
+"Bangalore Institute of Technology-V V Puram, Bengaluru",E019,BENGALURU,AS-Aerospace Engineering,AS,GM,24965,62546
+"Bapuji Institute of Engineering and Technology-Shamanur Road, Davangere",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,90931,62374
+"Basaveshwar Engineering College-Vidya Nagar, Bagalkote",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,109052,62287
+"C.M.R. Institute of Technology-Brookefield, Bengaluru",E032,BENGALURU,AS-Aerospace Engineering,AS,GM,39306,62201
+"Dayananda Sagar Academy of Technology and Management-Kanakpura Road, Bengaluru",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,94611,61770
+"Dayananda Sagar College of Engineering-Kumaraswamy Layout, Bengaluru",E040,BENGALURU,AS-Aerospace Engineering,AS,GM,10627,61684
+"Dr. Ambedkar Institute of Technology-Malathahalli, Bengaluru",E042,BENGALURU,AS-Aerospace Engineering,AS,GM,109945,61597
+"Global Academy of Technology-Rajarajeshwari Nagar, Bengaluru",E050,BENGALURU,AS-Aerospace Engineering,AS,GM,92682,60994
+"GSSS Institute of Engineering and Technology for Women-Metagalli, Mysuru",E055,MYSURU,AS-Aerospace Engineering,AS,GM,88717,61166
+"JSS Academy of Technical Education-Kengeri Main Road, Bengaluru",E060,BENGALURU,AS-Aerospace Engineering,AS,GM,107604,60821
+JSS Science and Technology University-Mysuru,Unknown,Unknown,AS-Aerospace Engineering,AS,GM,26486,60735
+"M.S. Ramaiah Institute of Technology-MSR Nagar, Bengaluru",E077,BENGALURU,AS-Aerospace Engineering,AS,GM,3030,59873
+"Maharaja Institute of Technology-Belawadi, Mandya",E078,MANDYA,AS-Aerospace Engineering,AS,GM,102839,59700
+"P.E.S.College of Engineering-PES College Road, Mandya",E089,MANDYA,AS-Aerospace Engineering,AS,GM,92865,59355
+"SJB Institute of Technology-Kengeri, Bengaluru",E107,BENGALURU,AS-Aerospace Engineering,AS,GM,94373,58493
+"SDM College of Engineering and Technology, Tulu Minority-Kalaghatagi, Dharwad",Unknown,Unknown,AS-Aerospace Engineering,AS,GM,79990,58665
+"Siddaganga Institute of Technology-B H Road, Tumakuru",E125,TUMAKURU,AS-Aerospace Engineering,AS,GM,27637,58062
+"Sir M.Visvesvaraya Institute of Technology-Yelahanka, Bengaluru",E126,BENGALURU,AS-Aerospace Engineering,AS,GM,53985,57975
+"Reva University-Yelahanka, Bengaluru",E164,BENGALURU,AS-Aerospace Engineering,AS,GM,81333,58752
+"Presidency University-Yelahanka, Bengaluru",E173,BENGALURU,AS-Aerospace Engineering,AS,GM,51906,59183
+"M.S. Ramaiah University of Applied Sciences-MSR Nagar, Bengaluru",E197,BENGALURU,AS-Aerospace Engineering,AS,GM,39103,59786
+"JSS Academy of Technical Education-Kengeri Main Road, Bengaluru",E060,BENGALURU,AS-Aerospace Engineering,AS,GM,100246,60821

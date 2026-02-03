@@ -51,11 +51,42 @@ function sendMessage() {
     });
 }
 
+function formatMessage(text) {
+    // 1. Escape HTML
+    let formatted = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+    // 2. Bold (**text**)
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // 3. Markdown Links [text](url)
+    formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+
+    // 4. Raw URLs (http/s) that weren't captured by markdown
+    // Avoid double-linking by checking if it's already inside an anchor tag
+    // Simple lookbehind alternative or just skipping raw url if we assume backend is good.
+    // Let's add simple raw URL support for fallback:
+    formatted = formatted.replace(/(?<!href=")(https?:\/\/[^\s]+)/g, (match) => {
+        // If it's already part of the markdown replacement (which we did first), this regex might overlap? 
+        // Actually, step 3 handled [text](url). If we have https://google.com it remains.
+        return `<a href="${match}" target="_blank">${match}</a>`;
+    }); 
+    
+    // 5. Newlines
+    formatted = formatted.replace(/\n/g, '<br>');
+
+    return formatted;
+}
+
 function addMessage(text, className) {
     const chatBody = document.getElementById('chat-body');
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('chat-message', className);
-    messageDiv.textContent = text;
+    
+    // Use innerHTML to render formatting
+    messageDiv.innerHTML = formatMessage(text);
     
     chatBody.appendChild(messageDiv);
     chatBody.scrollTop = chatBody.scrollHeight;

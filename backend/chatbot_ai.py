@@ -3,12 +3,14 @@ import random
 import os
 import re
 import joblib
+import difflib
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from backend.colleges_data import colleges_list, architecture_colleges
+from backend.branches_data import engineering_branches, architecture_branches
 # from backend.utils import load_comedk_data
 # from backend.prediction import predict_colleges
 from sqlalchemy import create_engine, text
@@ -92,6 +94,7 @@ class ChatBot:
         self.model = None
         self.colleges_df = None
         self.enriched_web_data = {}
+        self.context = {}  # Stores session context: {'last_college': None, 'topic': None}
         self.model_name = "GPT-5.1-Codex-Max"
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.model_path = os.path.join(self.base_dir, 'chatbot_model.pkl')
@@ -167,7 +170,8 @@ class ChatBot:
                 patterns.append(f"Tell me about {abbr}")
                 tags.append('colleges')
 
-            for college in colleges_list:
+            all_colleges = colleges_list + architecture_colleges
+            for college in all_colleges:
                 full_name = college.get('name', '')
                 main_name = full_name.split('-')[0].strip()
                 
@@ -206,89 +210,297 @@ class ChatBot:
             print(f"Error training chatbot: {e}")
             self.model = None
 
+    def find_college_match(self, message):
+        """
+        Robust fuzzy matching for college names using a scoring system.
+        """
+        message_lower = message.lower()
+        # Normalization for spaced initials (r v -> rv, b m s -> bms, m s -> ms)
+        message_clean = re.sub(r'\b([a-z])\s([a-z])\b', r'\1\2', message_lower)
+        message_clean = re.sub(r'\b([a-z])\s([a-z])\b', r'\1\2', message_clean) # Repeat for 3 letters (b m s)
+        message_clean = re.sub(r'[^a-z0-9\s]', '', message_clean)
+        
+        best_college = None
+        best_score = 0
+        
+        # Stopwords: Common words that don't help much in distinguishing colleges
+        # "college", "institute" are kept out of stopwords as they might help distinguish "BMS College" from "BMS Institute"
+        stopwords = {"of", "and", "the", "in", "at", "for", "dist", "road", "main", "cross", "dr", "sri", "smt", "shri", "bengaluru", "bangalore", "mysore", "karnataka"}
+
+        message_tokens = set(message_clean.split())
+        relevant_message_tokens = message_tokens - stopwords
+
+        # Combine both lists for search
+        all_colleges = colleges_list + architecture_colleges
+
+        for college in all_colleges:
+            current_score = 0
+            
+            # 1. Code Match (Exact) - Highest Priority
+            code = str(college['code']).lower()
+            if code in message_tokens:
+                 return college # Instant match for code
+                
+            name_lower = college['name'].lower()
+            # Normalize Name too (r v -> rv)
+            name_norm = re.sub(r'\b([a-z])\s([a-z])\b', r'\1\2', name_lower)
+            name_norm = re.sub(r'\b([a-z])\s([a-z])\b', r'\1\2', name_norm)
+            
+            # Clean name for tokenization
+            name_clean = re.sub(r'[^a-z0-9\s]', '', name_norm) 
+            
+            # Use the part before hyphen if avail for primary name, but check full name too
+            simple_name = name_lower.split('-')[0].strip()
+            
+            # 2. Abbreviation Match
+            # Check if any known abbreviation maps to this specific college name
+            for abbr, full_name in COLLEGE_ABBREVIATIONS.items():
+                # Normalize full name in abbreviation map too just in case
+                if full_name.lower().replace(" ", "") in name_lower.replace(" ", "") and abbr in message_tokens:
+                    current_score += 50 # Strong signal
+            
+            # 3. Token Overlap Score
+            college_tokens = set(name_clean.split())
+            relevant_college_tokens = college_tokens - stopwords
+            
+            if relevant_college_tokens and relevant_message_tokens:
+                # Intersection of meaningful words (e.g. "acharya", "technology")
+                overlap = relevant_college_tokens.intersection(relevant_message_tokens)
+                
+                # Weight matches
+                current_score += len(overlap) * 10
+                
+                # Bonus: First word match (Very important for "Acharya", "BMS", "RV")
+                if message_tokens and college_tokens:
+                    m_parts = message_clean.split()
+                    c_parts = name_clean.split()
+                    
+                    if m_parts and c_parts and m_parts[0] == c_parts[0]:
+                         if m_parts[0] not in {"sri", "smt", "dr", "govt", "government", "university", "college", "institute"}:
+                             current_score += 20
+
+                # Bonus for sequential substring match
+                # Use normalized simple name check
+                simple_norm = re.sub(r'\b([a-z])\s([a-z])\b', r'\1\2', simple_name)
+                simple_norm = re.sub(r'[^a-z0-9\s]', '', simple_norm)
+                
+                if simple_norm in message_clean:
+                    current_score += 15
+            
+            # Update best candidate
+            if current_score > best_score:
+                best_score = current_score
+                best_college = college
+        
+        # Threshold: At least one significant word match (score >= 10)
+        if best_score >= 10:
+            return best_college
+            
+        return None
+
+    def get_college_cutoff_stats(self, college_code, year="2026"):
+        """
+        Fetch basic statistics for a college's cutoff to answer 'what is cutoff for X'
+        """
+        try:
+            with engine.connect() as conn:
+                # Get range of cutoffs for GM category
+                query = text(f"""
+                    SELECT branch, MIN(predicted_closing_rank), MAX(predicted_closing_rank)
+                    FROM predictions_{year}
+                    WHERE college_code = :code AND category = 'GM'
+                    GROUP BY branch
+                    ORDER BY MIN(predicted_closing_rank) ASC
+                """)
+                # Using LIMIT in python as SQLite/SQLServer syntax varies
+                result = conn.execute(query, {"code": college_code})
+                rows = result.fetchall()
+                if not rows:
+                    return "No cutoff data available for this college."
+                    
+                summary = "**Expected Cutoffs (GM):**\n"
+                # Show top 5 branches
+                for row in rows[:5]:
+                    branch = row[0]
+                    # Clean branch name
+                    if '-' in branch: branch = branch.split('-', 1)[1]
+                    summary += f"- {branch[:25]}..: ~{row[1]}\n"
+                
+                if len(rows) > 5:
+                    summary += f"*(and {len(rows)-5} more courses)*"
+                return summary
+        except Exception as e:
+            print(f"Error fetching cutoffs: {e}")
+            return None
+
+    def get_available_branches(self, college_code):
+        """Fetch distinct branches for a college from DB with normalization"""
+        try:
+            with engine.connect() as conn:
+                query = text("SELECT DISTINCT branch FROM predictions_2026 WHERE college_code = :code ORDER BY branch")
+                result = conn.execute(query, {"code": college_code})
+                raw_branches = [row[0] for row in result if row[0]]
+                
+                # --- Normalization Logic (Copied/Adapted from routes.py) ---
+                
+                # 1. Maps
+                standard_branches_by_code = {b['code']: b['name'] for b in engineering_branches + architecture_branches}
+                
+                def simplify_text(text):
+                    if not isinstance(text, str): return ""
+                    return re.sub(r'[^a-z0-9]', '', text.lower())
+
+                standard_branches_by_name = {}
+                for b in engineering_branches + architecture_branches:
+                    rectified_name = b['name']
+                    simple = simplify_text(rectified_name)
+                    if simple:
+                        standard_branches_by_name[simple] = (b['code'], rectified_name)
+                        
+                # 2. Fixes
+                common_fixes = [
+                    (r'Telecomm[- ]?unication', 'Telecommunication'),
+                    (r'Communicati[- ]?on', 'Communication'),
+                    (r'Engin[- ]?eering', 'Engineering'),
+                    (r'Techno[- ]?logy', 'Technology'),
+                    (r'Inform[- ]?ation', 'Information'),
+                    (r'Artific[- ]?ial', 'Artificial'),
+                    (r'Intell[- ]?lgence', 'Intelligence'),
+                    (r'Mechan[- ]?ical', 'Mechanical'),
+                    (r'Electr[- ]?ical', 'Electrical'),
+                    (r'Electr[- ]?onics', 'Electronics'),
+                    (r'Comp[- ]?uter', 'Computer'),
+                    (r'Scien[- ]?ce', 'Science'),
+                ]
+
+                unique_map = {}
+                
+                for branch in raw_branches:
+                    raw_branch = branch.strip()
+                    clean_branch = raw_branch.replace('- ', '-').strip()
+                    final_branch = clean_branch # Default
+                    found_standard = False
+                    
+                    # Strategy A: Code Prefix
+                    parts = clean_branch.split('-', 1)
+                    if len(parts) > 1:
+                        code_prefix = parts[0].strip().upper()
+                        if code_prefix in standard_branches_by_code:
+                            final_branch = f"{code_prefix}-{standard_branches_by_code[code_prefix]}"
+                            found_standard = True
+                    
+                    # Strategy B: Simplified Match
+                    if not found_standard:
+                        text_part = parts[1] if len(parts) > 1 else clean_branch
+                        simple_text = simplify_text(text_part)
+                        
+                        if simple_text in standard_branches_by_name:
+                             code, name = standard_branches_by_name[simple_text]
+                             final_branch = f"{code}-{name}"
+                             found_standard = True
+                        else:
+                             simple_full = simplify_text(clean_branch)
+                             if simple_full in standard_branches_by_name:
+                                  code, name = standard_branches_by_name[simple_full]
+                                  final_branch = f"{code}-{name}"
+                                  found_standard = True
+                                  
+                    # Strategy C: Regex Fixes
+                    if not found_standard:
+                        for pattern, replacement in common_fixes:
+                           final_branch = re.sub(pattern, replacement, final_branch, flags=re.IGNORECASE)
+
+                    # Deduplicate using simplified key to catch "AS- Aero..." vs "AS-Aero..."
+                    dedupe_key = simplify_text(final_branch)
+                    if dedupe_key not in unique_map:
+                         unique_map[dedupe_key] = final_branch
+                    else:
+                         # Prefer longer/cleaner version? Or just keep first.
+                         pass
+
+                # Return sorted values
+                return sorted(list(unique_map.values()))
+                
+        except Exception as e:
+            print(f"Error fetching branches for {college_code}: {e}")
+            return []
+
     def get_college_info(self, message):
         message = message.lower()
-        found_college = None
         
-        # Check for abbreviations
-        for abbr, full_name in COLLEGE_ABBREVIATIONS.items():
-            # Check for abbr as a distinct word
-            if re.search(r'\b' + re.escape(abbr) + r'\b', message):
-                # Replace abbr with part of full name to help matching below
-                # or just use full_name for matching logic
-                message = message.replace(abbr, full_name.lower())
+        # 1. Identify College
+        found_college = self.find_college_match(message)
         
-        # Check against the comprehensive list from colleges_data.py
-        for college in colleges_list:
-            # Simple fuzzy matching: check if college name parts are in message
-            # Or check if a significant part of the college name is in the message
-            college_name_lower = college['name'].lower()
-            
-            # Extract main name (e.g., "BMS College of Engineering" from "BMS College of Engineering-Basavanagudi...")
-            main_name = college_name_lower.split('-')[0].strip()
-            
-            if main_name in message:
-                found_college = college
-                break
-            
-            # Also check for common abbreviations if possible, or just partial match
-            # For now, let's stick to the main name check
-            
+        # 2. Contextual Fallback (e.g. "what about placements there?")
+        if not found_college and self.context.get('last_college'):
+            context_words = ['it', 'that', 'there', 'college', 'institute', 'campus']
+            if any(w in message for w in context_words):
+                found_college = self.context['last_college']
+
         if found_college:
-            response = f"**{found_college['name']}**\n"
-            response += f"Location: {found_college['location']}\n"
+            # Update Context
+            self.context['last_college'] = found_college
             
-            # Check for specific info types in user message
+            response = f"**{found_college['name']}**\n"
+            response += f"**Code:** {found_college['code']}\n"
+            response += f"**Location:** {found_college['location']}\n"
+            
+            # Add About if available
+            if found_college.get('about'):
+                response += f"\n{found_college['about']}\n"
+
+            # Add Website
+            if found_college.get('website'):
+                response += f"\n**Official Website:** {found_college['website']}\n"
+            
+            # Check for specific info types
             info_type = None
-            if any(w in message for w in ["placement", "package", "salary", "recruiters"]):
+            if any(w in message for w in ["placement", "package", "salary", "recruiters", "job"]):
                 info_type = "placement"
-            elif any(w in message for w in ["hostel", "accommodation", "dorm"]):
+            elif any(w in message for w in ["hostel", "accommodation", "dorm", "mess"]):
                 info_type = "hostel"
-            elif any(w in message for w in ["infrastructure", "campus", "facilities"]):
+            elif any(w in message for w in ["infrastructure", "campus", "facilities", "labs"]):
                 info_type = "infrastructure"
             elif any(w in message for w in ["academic", "curriculum", "faculty"]):
                 info_type = "academics"
-            elif any(w in message for w in ["admission", "eligibility", "process"]):
+            elif any(w in message for w in ["admission", "eligibility", "process", "seat"]):
                 info_type = "admissions"
+            elif any(w in message for w in ["cutoff", "rank", "closing"]):
+                info_type = "cutoff"
                 
-            # If enriched data exists and users asks for specific info
             code = found_college['code']
-            if info_type and self.enriched_web_data and code in self.enriched_web_data:
+            
+            # Handle Cutoff Query specifically
+            if info_type == "cutoff":
+                stats = self.get_college_cutoff_stats(code)
+                if stats:
+                    response += f"\n{stats}\n"
+                else:
+                    response += "\nCutoff data not currently available.\n"
+            
+            # Handle Web Data (Enriched)
+            elif info_type and self.enriched_web_data and code in self.enriched_web_data:
                 details = self.enriched_web_data[code].get('links', {}).get(info_type)
                 if details:
                     if details.get('url'):
                         response += f"\nHere is the official {info_type} information: {details['url']}\n"
                     if details.get('content') and len(details['content']) > 20:
-                        # Extract a snippet
                         snippet = details['content'][:300].replace('\n', ' ') + "..."
                         response += f"Snippet: {snippet}\n"
-                    else:
-                        response += f"\n(Further details available on the official website)\n"
                 else:
-                    response += f"\nSpecific {info_type} details are not currently indexed. Please visit: {found_college.get('website', 'official website')}\n"
+                    response += f"\nSpecific {info_type} details are not indexed. Visit: {found_college.get('website', 'official website')}\n"
             
-            # Look up courses in the CSV if no specific info requested or just general
-            elif not info_type and not self.colleges_df.empty:
-                # Normalize columns for access
-                df = self.colleges_df.copy()
-                df.columns = [c.strip().lower().replace(' ', '_') for c in df.columns]
-                
-                # Check column existence
-                code_col = 'college_code' if 'college_code' in df.columns else None
-                course_col = 'course' if 'course' in df.columns else None
-                
-                if code_col and course_col:
-                    college_courses = df[df[code_col] == found_college['code']]
-                    
-                    if not college_courses.empty:
-                        response += "\nAvailable Courses:\n"
-                        courses = college_courses[course_col].unique()
-                        for course in courses:
-                            response += f"- {course}\n"
-            
-            # Helper text
+            # If General Inquiry (No specific info requested), Show Branches
             if not info_type:
-                 response += "\nYou can also ask about **placements**, **hostels**, or **fees** for this college."
+                 branches = self.get_available_branches(code)
+                 if branches:
+                     response += "\n**Available Branches:**\n"
+                     for i, b in enumerate(branches, 1):
+                         response += f"{i}. {b}\n"
+                 else:
+                     response += "\n(No branch data found in predictions DB)\n"
+
+                 response += "\n*Ask about placements, cutoffs, or hostels for more info.*"
                 
             return response
             
@@ -304,36 +516,23 @@ class ChatBot:
         try:
             msg_lower = message.lower()
             
-            # --- General Category Counts (User Request) ---
-            # Check for pure category queries (without rank numbers)
-            is_rank_query = bool(re.search(r'\d+', msg_lower))
+            # --- Hardcoded Keyword Checks ---
             
-            if not is_rank_query:
-                if "b.arch" in msg_lower or "architecture" in msg_lower:
-                    return f"We have data on **{len(architecture_colleges)}** Architecture colleges. You can explore the list of all participating colleges in the **Colleges** section."
-                
-                
-                
-                if any(k in msg_lower for k in ["b.e", "b.tech", "engineering", "btech", "be"]):
-                    return f"We have data on **{len(colleges_list)}** Engineering colleges including top institutes like RVCE, BMSCE, and MSRIT. Check the **Colleges** tab for more details."
+            # 1. General Cutoff/Predictor Queries (If no specific college context found later)
+            general_cutoff_keywords = ["cutoff", "cutoffs", "closing rank", "rank needed", "prediction", "predict", "chances"]
 
-            # Check for rank prediction request
-            # Look for "rank" followed by number, or just a number if it looks like a rank
+            # [Rank Prediction Logic - Keeping existing code structure]
             rank_match = re.search(r'rank\s*[:is]?\s*(\d+)', msg_lower)
-            if not rank_match:
-                # Try to find just a number if the message is short (e.g. "5000")
-                if message.strip().isdigit():
-                    rank_match = re.search(r'(\d+)', message)
+            if not rank_match and message.strip().isdigit():
+                rank_match = re.search(r'(\d+)', message)
             
             if rank_match:
+                # ... (Calling predict_colleges etc - same as before)
                 rank = int(rank_match.group(1))
-
                 # Identify requested course type
-                msg_lower = message.lower()
                 course_type = None
-                
                 arch_keywords = ["architecture", "b.arch", "b arch", "at"]
-                design_keywords = ["design", "b.des", "b des"] # Usually handled within architecture type logic for grouping
+                design_keywords = ["design", "b.des", "b des"]
                 eng_keywords = ["engineering", "b.e", "b.tech", "b tech", "be", "technology"]
 
                 if any(k in msg_lower for k in arch_keywords + design_keywords):
@@ -341,12 +540,9 @@ class ChatBot:
                 elif any(k in msg_lower for k in eng_keywords):
                     course_type = 'engineering'
 
-                # Call prediction logic with detected type
                 results = predict_colleges(rank, None, 'GM', course_type=course_type)
                 
-                # --- Categorize Results ---
-                # Keywords for categorization
-                # Re-defining here for grouping logic
+                # --- Categorize Results (Copied from original) ---
                 arch_keys = ["architecture", "b.arch"]
                 design_keys = ["bachelor of design", "b.des", "design"]
                 planning_keys = ["planning", "b.plan", "urban"]
@@ -367,13 +563,13 @@ class ChatBot:
                     else:
                         eng_list.append(res)
 
+                # Format response
                 response = f"Entered Rank: {rank}\n"
                 if course_type:
                      response += f" (Filtered for {course_type.title()})\n\n"
                 else:
                      response += "\n"
 
-                # Helper to format list
                 def format_list(lst, limit=10):
                     txt = ""
                     # Sort primarily by cutoff
@@ -383,55 +579,42 @@ class ChatBot:
                     return txt
 
                 has_content = False
-
-                # 1. Architecture Results
                 if arch_list:
-                    response += "**Architecture (B.Arch)**\n"
-                    response += format_list(arch_list)
-                    response += "\n"
+                    response += "**Architecture (B.Arch)**\n" + format_list(arch_list) + "\n"
                     has_content = True
-
-                # 2. Design Results
                 if design_list:
-                    response += "**Design Courses**\n"
-                    response += format_list(design_list)
-                    response += "\n*Note: Design ranks may differ significantly from Architecture norms due to intake patterns.*\n"
+                    response += "**Design Courses**\n" + format_list(design_list) + "\n*Note: Design ranks may differ.*\n"
                     has_content = True
-                
-                # 3. Planning Results
                 if plan_list:
-                    response += "**Planning Courses**\n"
-                    response += format_list(plan_list)
-                    response += "\n*Note: Planning ranks sort separately.*\n"
+                    response += "**Planning Courses**\n" + format_list(plan_list) + "\n"
                     has_content = True
-
-                # 4. Engineering
-                # If filtered for Architecture, this list should be empty or ignored unless specific overlap
                 if eng_list:
-                    # Only show engineering if:
-                    # a) User asked for Engineering
-                    # b) User didn't specify type (show generic)
-                    # c) User asked for Arch but somehow we got Eng results (shouldn't happen with SQL filter)
-                    
                     if course_type == 'engineering' or not course_type:
-                        if has_content:
-                            response += "\n**Engineering Courses** (Top matches)\n"
-                        else:
-                            response += "**Eligible Engineering Colleges**:\n"
+                        if has_content: response += "\n**Engineering Courses** (Top matches)\n"
+                        else: response += "**Eligible Engineering Colleges**:\n"
                         response += format_list(eng_list, limit=10)
                         has_content = True
 
                 if not has_content:
                     response += "Based on historical data, no colleges found for this rank."
-
                 return response
 
-            # First, check if the user is asking about a specific college
+            # 2. Check College Info
             college_response = self.get_college_info(message)
             if college_response:
                 return college_response
 
-            # Predict intent
+            # --- General Category Counts (MOVED AFTER COLLEGE CHECK) ---
+            is_rank_query = bool(re.search(r'\d+', msg_lower))
+            if not is_rank_query:
+                if "b.arch" in msg_lower or "architecture" in msg_lower:
+                    return f"We have data on **{len(architecture_colleges)}** Architecture colleges. You can explore the list of all participating colleges in the **Colleges** section."
+
+            # 3. Fallback Keyword Checks (If no specific college found)
+            if any(k in msg_lower for k in general_cutoff_keywords):
+                 return "Cutoffs vary by college and branch. Use our **College Predictor** tool to check detailed closing ranks and admission chances."
+
+            # 4. Model Prediction
             probs = self.model.predict_proba([message])[0]
             max_prob = np.max(probs)
             predicted_tag = self.model.classes_[np.argmax(probs)]

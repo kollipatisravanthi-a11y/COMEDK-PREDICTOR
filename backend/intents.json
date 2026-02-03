@@ -21,17 +21,54 @@
     {
       "tag": "colleges",
       "patterns": [
-        "colleges",
+        "showing colleges in general",
         "college list",
-        "list of colleges",
-        "show me colleges",
-        "top colleges",
-        "best colleges",
+        "show me list of colleges",
         "all colleges"
       ],
       "responses": [
-        "You can explore the list of all participating colleges in the **Colleges** section.",
-        "We have data on many top colleges including RVCE, BMSCE, and MSRIT. Check the **Colleges** tab for more details."
+        "You can explore the list of all participating colleges in the **Colleges** section via the menu.",
+        "We have data on top colleges like RVCE, BMSCE, and MSRIT. Check the **Colleges** page for the full directory."
+      ]
+    },
+    {
+      "tag": "counseling_process",
+      "patterns": [
+        "counseling process",
+        "how does counseling work",
+        "documents required",
+        "what is verification",
+        "choice filling"
+      ],
+      "responses": [
+        "**COMEDK Counseling Process** involves:\n1. Registration & Document Upload\n2. Document Verification\n3. Choice Filling (selecting colleges/branches)\n4. Mock Allotment\n5. Real Allotment Rounds (Usually 3 rounds).",
+        "You will need documents like your Rank Card, Admit Card, 10th/12th Marks Cards, ID Proof, and Category Certificate (if applicable)."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "fees",
+        "fee structure",
+        "how much does it cost",
+        "college fees"
+      ],
+      "responses": [
+        "The tuition fee for COMEDK colleges is generally around **₹2.6 Lakhs per year** for most engineering courses. However, top colleges may differ slightly, and there are additional college/university fees.",
+        "Expect roughly ₹2.5L - ₹2.8L per annum for tuition. Hostel and mess fees are separate and vary by college (approx ₹1L/year)."
+      ]
+    },
+    {
+      "tag": "exam_pattern",
+      "patterns": [
+        "exam pattern",
+        "syllabus",
+        "negative marking",
+        "total marks"
+      ],
+      "responses": [
+        "The COMEDK UGET exam is **180 marks** total (60 Physics, 60 Chemistry, 60 Maths). There is **NO negative marking**. Duration is 3 hours.",
+        "The syllabus is based on the 11th and 12th standard CBSE/State Board curriculum for Physics, Chemistry, and Mathematics."
       ]
     },
     {
@@ -115,13 +152,33 @@
       "patterns": [
         "What is the cutoff?",
         "cutoff for RVCE",
-        "cutoff for CS",
-        "previous year cutoffs",
-        "rank required for BMSCE",
-        "cutoffs"
+        "rank required for BMSCE"
       ],
       "responses": [
         "Cutoffs vary by college and branch. To check your eligibility, please go to the **Predictor** section."
+      ]
+    },
+    {
+      "tag": "predictor",
+      "patterns": [
+        "How to use the predictor?",
+        "predict my college",
+        "college predictor tool",
+        "where is the predictor?",
+        "predict colleges",
+        "prediction link",
+        "cutoofs",
+        "cut off",
+        "cutoff",
+        "closes rank",
+        "opening rank",
+        "closing rank",
+        "check my chances",
+        "which college can i get",
+        "cutoffs"
+      ],
+      "responses": [
+        "Use our **College Predictor** tool to check your admission chances based on your rank and category. It shows detailed cutoffs and closing ranks."
       ]
     },
     {
@@ -176,19 +233,7 @@
         "Apart from tuition fees, there might be other college fees and hostel fees."
       ]
     },
-    {
-      "tag": "predictor",
-      "patterns": [
-        "How to use the predictor?",
-        "predict my college",
-        "college predictor tool",
-        "where is the predictor?"
-      ],
-      "responses": [
-        "To use the predictor, go to the 'Predictor' page, enter your rank, select your preferred branches, and click 'Predict Colleges'.",
-        "The predictor uses past year data to estimate your chances. Give it a try!"
-      ]
-    },
+
     {
       "tag": "thanks",
       "patterns": [

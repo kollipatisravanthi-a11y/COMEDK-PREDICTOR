@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 import pandas as pd
 from flask import jsonify, render_template, request
@@ -273,11 +274,86 @@ def predictor():
                     df['branch'] = df['branch'].replace(['B.ARCH', 'B.Arch', 'Architecture'], 'Bachelor of Architecture (B.Arch)')
                     results = df[['college_name', 'college_code', 'branch', branch_col, branch_name_col, 'round', 'category', 'predicted_closing_rank']].to_dict(orient='records')
                      
-                    # Normalize branch names for deduplication (handle "CS- Computer" vs "CS-Computer")
+                    # 1. Create lookup map for standardizing branch names by CODE
+                    standard_branches_by_code = {b['code']: b['name'] for b in engineering_branches + architecture_branches}
+                    
+                    # 2. Create lookup map for standardizing branch names by SIMPLIFIED TEXT
+                    # This handles "Communicati on" etc by matching "electronics&communicationengineering"
+                    def simplify_text(text):
+                        if not isinstance(text, str): return ""
+                        # Remove all non-alphanumeric characters and lowercase
+                        return re.sub(r'[^a-z0-9]', '', text.lower())
+
+                    standard_branches_by_name = {}
+                    for b in engineering_branches + architecture_branches:
+                        # Map simplified name -> (Code, Standard Name)
+                        rectified_name = b['name']
+                        simple = simplify_text(rectified_name)
+                        if simple:
+                            standard_branches_by_name[simple] = (b['code'], rectified_name)
+
+                    # List of common broken words to fix via regex if lookup fails
+                    # (Fallback for when the branch standard isn't in our list)
+                    common_fixes = [
+                        (r'Telecomm[- ]?unication', 'Telecommunication'),
+                        (r'Communicati[- ]?on', 'Communication'),
+                        (r'Engin[- ]?eering', 'Engineering'),
+                        (r'Techno[- ]?logy', 'Technology'),
+                        (r'Inform[- ]?ation', 'Information'),
+                        (r'Artific[- ]?ial', 'Artificial'),
+                        (r'Intell[- ]?lgence', 'Intelligence'),
+                        (r'Mechan[- ]?ical', 'Mechanical'),
+                        (r'Electr[- ]?ical', 'Electrical'),
+                        (r'Electr[- ]?onics', 'Electronics'),
+                        (r'Comp[- ]?uter', 'Computer'),
+                        (r'Scien[- ]?ce', 'Science'),
+                    ]
+
+                    # Normalize branch names for deduplication
                     for r in results:
                         if 'branch' in r and isinstance(r['branch'], str):
-                            # Remove space after hyphen if present
-                            r['branch'] = r['branch'].replace('- ', '-').strip()
+                            raw_branch = r['branch'].strip()
+                            clean_branch = raw_branch.replace('- ', '-').strip()
+                            
+                            found_standard = False
+                            
+                            # Strategy A: Check Code Prefix (Most Reliable)
+                            # e.g. "EC - Electronics..." -> "EC"
+                            parts = clean_branch.split('-', 1)
+                            if len(parts) > 1:
+                                code_prefix = parts[0].strip().upper()
+                                # Check if code matches a known standard
+                                if code_prefix in standard_branches_by_code:
+                                    # Replace with standard name: CODE-Standard Name
+                                    r['branch'] = f"{code_prefix}-{standard_branches_by_code[code_prefix]}"
+                                    found_standard = True
+
+                            # Strategy B: Simplified Name Match (Robust against spaces/hyphens)
+                            # e.g. "EC-Electronics & Communicati on" -> "electronicscommunication"
+                            if not found_standard:
+                                # Try matching the text part (after hyphen if exists, else full string)
+                                text_part = parts[1] if len(parts) > 1 else clean_branch
+                                simple_text = simplify_text(text_part)
+                                
+                                if simple_text in standard_branches_by_name:
+                                    code, name = standard_branches_by_name[simple_text]
+                                    r['branch'] = f"{code}-{name}"
+                                    found_standard = True
+                                else:
+                                    # Try simplifying the *entire* string (ignoring potential code prefix if it was garbled)
+                                    simple_full = simplify_text(clean_branch)
+                                    if simple_full in standard_branches_by_name:
+                                         code, name = standard_branches_by_name[simple_full]
+                                         r['branch'] = f"{code}-{name}"
+                                         found_standard = True
+
+                            # Strategy C: Regex Pattern Fixes (Fallback)
+                            # Fixes "Bro ken Wor ds" even if we can't map to a standard branch
+                            if not found_standard:
+                                fixed_branch = clean_branch
+                                for pattern, replacement in common_fixes:
+                                    fixed_branch = re.sub(pattern, replacement, fixed_branch, flags=re.IGNORECASE)
+                                r['branch'] = fixed_branch
 
                     # Remove duplicates based on college_name, college_code, branch, round, category
                     seen = set()
